@@ -23,24 +23,50 @@
 		<div id="step_1"class=" col">
 			<div id="step_1_personal_information"class="row step-headers p-left">STEP 1. PERSONAL INFORMATION</div>
 				<div id="name_group"class="row form-group">
-					<input type="text" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter First Name" id="first_name">
-					<input type="text" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter Last Name" id="last_name">
+					<input required="required" type="text" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter First Name" id="first_name">
+					<input required="required" type="text" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter Last Name" id="last_name">
 				</div>
 				<div id="email_group"class="row form-group">
-					<input type="email" class="col form-control form-fields-full border rounded-pill" placeholder="Enter Email Address" id="first_name">
+					<input required="required" type="email" class="col form-control form-fields-full border rounded-pill" placeholder="Enter Email Address" id="email_address">
 				</div>
 				<div id="street_address_group"class="row form-group">
-					<input type="text" class="col form-control form-fields-full border rounded-pill" placeholder="Enter Street Address" id="first_name">
+					<input required="required" type="text" class="col form-control form-fields-full border rounded-pill" placeholder="Enter Street Address" id="street_address">
 				</div>
 				<div id="city_state_zip_group"class="row form-group">
-					<input type="text" class="col-6 form-control form-fields-mid border rounded-pill" placeholder="Enter City" id="first_name">
-					<input type="text" class="col-3 form-control form-fields-mid border rounded-pill" placeholder="Enter State" id="first_name">
-					<input type="text" class="col-2 form-control form-fields-mid border rounded-pill" placeholder="Enter Zip" id="first_name">
+					<input required="required" type="text" class="col-6 form-control form-fields-mid border rounded-pill" placeholder="Enter City" id="city">
+					<input required="required" type="text" class="col-3 form-control form-fields-mid border rounded-pill" placeholder="Enter State" id="state">
+					<input required="required" type="text" class="col-2 form-control form-fields-mid border rounded-pill" placeholder="Enter Zip" id="zip">
 				</div>
-
+				<div id="contact_group"class="row form-group">
+					<input required="required" type="number" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter Mobile Number" id="mobile_number">
+					<input type="number" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter Work Number" id="work_number">
+				</div>
 		</div>
 		<div id="step_2"class="col">
-			<div id="step_2_personal_information"class="row step-headers p-left">STEP 2. ANNUAL SALARY INFORMATION</div>
+			<div id="step_2_other_information"class="row step-headers p-left">STEP 2. OTHER INFORMATION</div>
+			<div id="date_of_birth"class="row form-group">
+				<input required="required" type="text" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter DOB (mm/dd/yyyy)" id="birth_date">
+				<input required="required" type="text" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter Country of Birth" id="country_birth_date">
+			</div>
+			<div id="Citizenship"class="row form-group">
+				<input type="text" class="col form-control form-fields-full border rounded-pill" placeholder="Enter Any Other Country of Citizenship" id="country_Citizenship">
+			</div>
+			<div id="Annual_salary_SSN_group"class="row form-group">
+				<input required="required" type="number" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter Annual Salary (USD)" id="annual_salary">
+				<input required="required" type="number" class="col form-control form-fields-mid border rounded-pill" placeholder="SSN (xxx-xx-xxxx)" id="ss_number">
+			</div>
+			<div id="monthly_details"class="row form-group">
+				<input required="required" type="number" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter Monthly Income" id="monthly_salary">
+				<input type="number" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter Other Income (if any)" id="other_income_number">
+			</div>
+			<div id="monthly_rental_details"class="row form-group">
+				<input required="required" type="number" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter House Rent ($0 defautl)" id="monthly_house_rent">
+				<input type="number" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter Incoming Rent Amount ($0 default)" id="income_rent_amount">
+			</div>
+			
+
+
+
 		</div>
 	</div>
 	<button type="submit" class="btn btn-primary">Submit</button>
