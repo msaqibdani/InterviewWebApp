@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font: "Bebas Neue";
+  padding: 1vh;
+  font-size: 16px;
+  
+}/* You can add global styles to this file, and also import other style files */
+
+
+#bank_name
+{
+	background-color: #468bb6;
+	padding:1vw;
+	padding-left: 1vw;
+	font-size:20px;
+	color: white;
+
+}
+
+#application_name
+{
+	padding: 1vw;
+	color: #143a51;
+}
+
+#sub_application_name
+{
+	padding: 1vw;
+	color: grey;
+	margin-top:-4vh;
+	font-size: 13px;
+}
+
