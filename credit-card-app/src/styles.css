@@ -2,9 +2,6 @@ body {
   font: "Bebas Neue";
   padding: 0.5vw;
   font-size: 16px;
-  
-
-  
 }/* You can add global styles to this file, and also import other style files */
 
 .p-left
@@ -12,7 +9,6 @@ body {
 	padding-left: 2vw;
 	padding:1vw;
 }
-
 .step-headers
 {
 	margin-top: 2vh;
@@ -21,9 +17,27 @@ body {
 	max-width: 40vw;
 	font-size: 15px;
 	color: white;	
-
 }
-
+.form-fields-mid
+{	
+	padding: 1vw;
+	border-color:#e3e3e3;
+	margin-top:1vh;
+	font-size: 13px;
+	max-width: 20vw;
+	min-height: 7vh;
+	max-height: 7vh;
+}
+.form-fields-full
+{	
+	padding: 1vw;
+	border-color:#e3e3e3;
+	margin-top:1vh;
+	font-size: 13px;
+	max-width: 40vw;
+	min-height: 7vh;
+	max-height: 7vh;
+}
 #bank_name
 {
 	background-color: #468bb6;
@@ -31,12 +45,10 @@ body {
 	font-size:20px;
 	color: white;
 }
-
 #application_name
 {
 	color: #143a51;
 }
-
 #sub_application_name
 {
 	color: grey;
