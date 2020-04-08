@@ -1,32 +1,48 @@
 body {
   font: "Bebas Neue";
-  padding: 1vh;
+  padding: 0.5vw;
   font-size: 16px;
+  
+
   
 }/* You can add global styles to this file, and also import other style files */
 
+.p-left
+{
+	padding-left: 2vw;
+	padding:1vw;
+}
+
+.step-headers
+{
+	margin-top: 2vh;
+	padding-left: 2vw;
+	background-color: #468bb6;
+	max-width: 40vw;
+	font-size: 15px;
+	color: white;	
+
+}
 
 #bank_name
 {
 	background-color: #468bb6;
-	padding:1vw;
 	padding-left: 1vw;
 	font-size:20px;
 	color: white;
-
 }
 
 #application_name
 {
-	padding: 1vw;
 	color: #143a51;
 }
 
 #sub_application_name
 {
-	padding: 1vw;
 	color: grey;
-	margin-top:-4vh;
+	margin-top:-2vh;
 	font-size: 13px;
 }
+
+
 
