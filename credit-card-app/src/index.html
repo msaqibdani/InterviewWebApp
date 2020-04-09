@@ -17,7 +17,7 @@
 	<div id="sub_application_name" class="row p-left">Enter all the required fields </div>
 	<form action="/action_page.php">
 	<div class="col row">
-		<div id="step_1"class=" col">
+		<div id="step_1"class="col">
 			<div id="step_1_personal_information"class="row step-headers p-left">STEP 1. PERSONAL INFORMATION</div>
 				<div id="name_group"class="row form-group">
 					<input required="required" type="text" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter First Name" id="first_name">
@@ -38,13 +38,22 @@
 					<input required="required" type="number" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter Mobile Number" id="mobile_number">
 					<input type="number" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter Work Number" id="work_number">
 				</div>
+				<div id="date_of_birth"class="row form-group">
+					<div class="form-fields-mid" style="color:grey; text-align: center">Enter Date of Birth</div>
+					<input required="required" type="date" class="form-control form-fields-mid border rounded-pill" placeholder="Enter DOB (mm/dd/yyyy)" id="birth_date">
+					<div class="dropdown" style="position: relative; margin-top:-3.5vh; margin-left: 1.7vw;">
+						<button type="button" class="button-custom btn btn-outline-dark dropdown-toggle" data-toggle="dropdown">Gender</button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item">Male</a>
+							<a class="dropdown-item">Female</a>
+							<a class="dropdown-item">Other</a>
+						</div>
+					</div>
+
+				</div>
 		</div>
 		<div id="step_2"class="col">
 			<div id="step_2_other_information"class="row step-headers p-left">STEP 2. OTHER INFORMATION</div>
-			<div id="date_of_birth"class="row form-group">
-				<input required="required" type="text" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter DOB (mm/dd/yyyy)" id="birth_date">
-				<input required="required" type="text" class="col form-control form-fields-mid border rounded-pill" placeholder="Enter Country of Birth" id="country_birth_date">
-			</div>
 			<div id="Citizenship"class="row form-group">
 				<input type="text" class="col form-control form-fields-full border rounded-pill" placeholder="Enter Any Other Country of Citizenship" id="country_Citizenship">
 			</div>
@@ -62,7 +71,7 @@
 			</div>
 		</div>
 	</div>
-	<button id="submit-button"type="submit" class="btn btn-outline-dark">Submit</button>
+	<button id="submit-button"type="submit" class="btn btn-outline-dark button-custom">Submit</button>
 	</form>
 </div>
 </body>

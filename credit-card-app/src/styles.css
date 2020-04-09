@@ -62,16 +62,17 @@ body {
 	font-size: 13px;
 }
 /*Last Row*/
-#submit-button
+.button-custom
 {
 	margin-top: 5vh;
 	border-color: #468bb6;
 	color:#468bb6;
 }
-#submit-button:hover
+.button-custom:hover
 {
 	background-color: #468bb6;
 	color:white;
+	border-color: #468bb6; 
 }
 
 
