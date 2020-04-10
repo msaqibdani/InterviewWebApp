@@ -27,7 +27,7 @@ body {
   border-color:#e3e3e3;
   margin-top:1vh;
   font-size: 13px;
-  max-width: 20vw!important;
+  max-width: 20vw;
   min-height: 7vh;
   max-height: 7vh;
 }
@@ -37,7 +37,7 @@ body {
   border-color:#e3e3e3;
   margin-top:1vh;
   font-size: 13px;
-  max-width: 40vw!important;
+  max-width: 40vw;
   min-height: 7vh;
   max-height: 7vh;
 }
@@ -65,12 +65,18 @@ body {
 .button-custom
 {
   margin-top: 5vh;
-  border-color: #468bb6!important;
-  color:#468bb6!important;
+  border-color: #468bb6;
+  color:#468bb6;
 }
 .button-custom:hover
 {
-  background-color: #468bb6!important;
-  color:white!important;
-  border-color: #468bb6!important; 
+  background-color: #468bb6;
+  color:white;
+  border-color: #468bb6; 
+}
+.button-custom:active
+{
+  background-color: #468bb6;
+  color:white;
+  border-color: #468bb6; 
 }
