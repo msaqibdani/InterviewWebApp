@@ -46,17 +46,17 @@
               <a class="dropdown-item">Other</a>
             </div>
           </div>
-
         </div>
+
+        <div id="Citizenship"class="row form-group">
+            <input type="text" class="col form-control form-fields-mid border " placeholder="Country of Citizenship" id="country_Citizenship">
+          </div>
     </div>
     <div id="step_2"class="col">
       <div id="step_2_other_information"class="row step-headers p-left">STEP 2. OTHER INFORMATION</div>
-      <div id="Citizenship"class="row form-group">
-        <input type="text" class="col form-control form-fields-full border " placeholder="Enter Any Other Country of Citizenship" id="country_Citizenship">
-      </div>
       <div id="Annual_salary_SSN_group"class="row form-group">
         <input required="required" type="number" class="col form-control form-fields-mid border " placeholder="Enter Annual Salary (USD)" id="annual_salary">
-        <input required="required" type="number" class="col form-control form-fields-mid border " placeholder="SSN (xxx-xx-xxxx)" id="ss_number">
+        <input required="required" type="number" class="col form-control form-fields-mid border " placeholder="Social Security Number" id="social_s_number">
       </div>
       <div id="monthly_details"class="row form-group">
         <input required="required" type="number" class="col form-control form-fields-mid border " placeholder="Enter Monthly Income" id="monthly_salary">
@@ -68,7 +68,21 @@
       </div>
     </div>
   </div>
+
+  <div class="col row">
+    <div id="step_3"class="col">
+      <div id="step_1_personal_information"class="row step-headers p-left">STEP 3. WORK INFORMATION</div>
+    </div>
+  </div>
   <button id="submit-button"type="submit" class="btn btn-outline-dark button-custom">Submit</button>
   </form>
 </div>
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    console.log('1');
+  });
+</script>
+
+
 <router-outlet></router-outlet>
