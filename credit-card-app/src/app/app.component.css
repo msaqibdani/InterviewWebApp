@@ -1,0 +1,76 @@
+body {
+  font: "Raleway", "Robot";
+  padding: 0.5vw;
+  font-size: 16px;
+}/* You can add global styles to this file, and also import other style files */
+
+/*take cares of the padding*/
+.p-left
+{
+  padding-left: 2vw;
+  padding:1vw;
+}
+/*Step1 and Step2*/
+.step-headers
+{
+  margin-top: 2vh;
+  padding-left: 2vw;
+  background-color: #468bb6;
+  max-width: 40vw;
+  font-size: 15px;
+  color: white; 
+}
+/*User Information Input Fields*/
+.form-fields-mid
+{ 
+  padding: 1vw;
+  border-color:#e3e3e3;
+  margin-top:1vh;
+  font-size: 13px;
+  max-width: 20vw!important;
+  min-height: 7vh;
+  max-height: 7vh;
+}
+.form-fields-full
+{ 
+  padding: 1vw;
+  border-color:#e3e3e3;
+  margin-top:1vh;
+  font-size: 13px;
+  max-width: 40vw!important;
+  min-height: 7vh;
+  max-height: 7vh;
+}
+/*First Row*/
+#bank_name
+{
+  background-color: #468bb6;
+  padding-left: 1vw;
+  font-size:20px;
+  color: white;
+}
+/*Second Row*/
+#application_name
+{
+  color: #143a51;
+}
+/*Third Row*/
+#sub_application_name
+{
+  color: grey;
+  margin-top:-3vh;
+  font-size: 13px;
+}
+/*Last Row*/
+.button-custom
+{
+  margin-top: 5vh;
+  border-color: #468bb6!important;
+  color:#468bb6!important;
+}
+.button-custom:hover
+{
+  background-color: #468bb6!important;
+  color:white!important;
+  border-color: #468bb6!important; 
+}
