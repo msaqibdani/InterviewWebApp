@@ -1,10 +1,7 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-
 	<div class="row pleft " id="firstStepRow">
 		<div class="col" id="step1">
 			<div class="step-headers">STEP 1. PERSONAL INFORMATION</div>
-
-
 			<div class="row form-group" id="nameGroup">
 				<div class="col">
 					<input type="text" class="form-control" id="firstName" placeholder="Enter First Name" formControlName = "firstName">
@@ -16,60 +13,80 @@
 					<input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" formControlName = "lastName">
 				</div>
 			</div>
-
 			<div class="row form-group" id="emailGroup">
 				<div class="col">
 					<input type="email" class="form-control" id="emailAddress" placeholder="Enter Personal Email Address" formControlName = "emailAddress">
 				</div>
 			</div>
-
 			<div class="row form-group" id="addressGroup">
 				<div class="col">
 					<input type="search" class="form-control" id="address" placeholder="Enter Current Address" formControlName="address">
 				</div>
 			</div>
-
-
 			<div class="row form-group" id="birthGender">
 				<div class="col">
 					<select class="custom-select" (change)="changeGender($event)" formControlName="genderName">
 						<option id="gender" value="" disabled>Gender</option>
 						<option *ngFor="let gender of Gender" [ngValue]="gender">{{gender}}</option></select>
 				</div>
-
 				<div class="col">
+					<input class="form-control" disabled type="text" placeholder="Date of Birth" style="text-align: center;">
+				</div>
+				<div class="col">
+					<input class="form-control" type="date" id="DOB" formControlName="dateOfBirth">
+				</div>
+			</div>
+			<div class="row form-group" id="Citizenships">
+				<div class="col">
+					<input type="text" class="form-control" placeholder="Enter Primary Citizenship" formControlName="primaryCitizenship" id="primaryCitizenship">
+				</div>
+				<div class="col">
+					<div class="col">
+						<input type="text" class="form-control" placeholder="Enter Other Citizenships" formControlName="otherCitizenships" id="otherCitizenships">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col id="step2>
+
+			<div class="step-headers">STEP 2. SALARY INFORMATION</div>
+
+
+			<div class="row form-group" id="annualSalaryGroup" style="margin-top:0.5vh;">
+				<div class="col-6">
+					<select class="custom-select" (change)="changeSelect($event)" formControlName="incomeSelect">
+						<option id="income" value="" disabled>Select your US Income</option>
+						<option *ngFor="let income of Income" [ngValue]="income">{{income}}</option>
+					</select>
 				</div>
 
+				<div class="col-6" style="padding-top: 1vh;">
+					<div class="form-check-inline">
+						<label class="form-check-label">
+							<input type="checkbox" class="form-check-input" value="" formControlName="soleEarner" id="soleEarner">  Are you a sole earner in your family?
+						</label>
+					</div>
+				</div>
 			</div>
 
 
 		</div>
+	
 
-		<div class="col id="step2>
-			<div class="step-headers">STEP 2. SALARY INFORMATION</div>
-		</div>
+
+
+
 
 
 	</div>
-
-
-
 	<div class="row pleft" id="secondStepRow">
-		
-
 		<div class="col" id="step3">
 			<div class="step-headers">STEP 3. WORK INFORMATION</div>
 		</div>
-
-
 		<div class="col" id="step4">
 			<div class="step-headers">STEP 4. OTHER INFORMATION</div>
 		</div>
 	</div>
-
-
-
-
 <div class="row pleft">
 	<div class="col">
 		<button class="btn btn-outline-dark" type="submit" [disabled]="!profileForm.valid">Submit</button>
