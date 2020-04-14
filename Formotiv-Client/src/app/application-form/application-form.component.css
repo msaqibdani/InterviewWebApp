@@ -1,0 +1,18 @@
+.pleft
+{
+	padding-left: 1vw;
+	margin-bottom: 2vh;
+}
+
+.step-headers
+{
+	background-color: #468bb6;
+	color: white;
+	padding-left: 1vw;
+}
+
+input
+{
+	margin-top: 0.5vh; 
+	margin-bottom: 0.5vh;
+}

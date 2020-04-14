@@ -1,0 +1,78 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+	<div class="row pleft " id="firstStepRow">
+		<div class="col" id="step1">
+			<div class="step-headers">STEP 1. PERSONAL INFORMATION</div>
+
+
+			<div class="row form-group" id="nameGroup">
+				<div class="col">
+					<input type="text" class="form-control" id="firstName" placeholder="Enter First Name" formControlName = "firstName">
+				</div>
+				<div class="col">
+					<input type="text" class="form-control" id="middleInitial" placeholder="Enter Middle Initial" formControlName = "middleInitial">
+				</div>
+				<div class="col">
+					<input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" formControlName = "lastName">
+				</div>
+			</div>
+
+			<div class="row form-group" id="emailGroup">
+				<div class="col">
+					<input type="email" class="form-control" id="emailAddress" placeholder="Enter Personal Email Address" formControlName = "emailAddress">
+				</div>
+			</div>
+
+			<div class="row form-group" id="addressGroup">
+				<div class="col">
+					<input type="search" class="form-control" id="address" placeholder="Enter Current Address" formControlName="address">
+				</div>
+			</div>
+
+
+			<div class="row form-group" id="birthGender">
+				<div class="col">
+					<select class="custom-select" (change)="changeGender($event)" formControlName="genderName">
+						<option id="gender" value="" disabled>Gender</option>
+						<option *ngFor="let gender of Gender" [ngValue]="gender">{{gender}}</option></select>
+				</div>
+
+				<div class="col">
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<div class="col id="step2>
+			<div class="step-headers">STEP 2. SALARY INFORMATION</div>
+		</div>
+
+
+	</div>
+
+
+
+	<div class="row pleft" id="secondStepRow">
+		
+
+		<div class="col" id="step3">
+			<div class="step-headers">STEP 3. WORK INFORMATION</div>
+		</div>
+
+
+		<div class="col" id="step4">
+			<div class="step-headers">STEP 4. OTHER INFORMATION</div>
+		</div>
+	</div>
+
+
+
+
+<div class="row pleft">
+	<div class="col">
+		<button class="btn btn-outline-dark" type="submit" [disabled]="!profileForm.valid">Submit</button>
+	</div>
+</div>
+</form>
