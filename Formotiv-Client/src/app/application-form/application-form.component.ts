@@ -10,6 +10,8 @@ declare var $:any;
 })
 export class ApplicationFormComponent implements OnInit {
 
+	submitted = false;
+
 	Gender: any = ['Male', 'Female', 'Genderqueer/Non-binary', 'Other','I prefer not to answer']
 	Income: any = ['Less than $10,000', '$10,000 to $19,999', '$20,000 to $39,999', '$40,000 to $59,999', '$60,000 to $79,999', '$80,000 to $99,999', '$100,000 or more']
 	JobStatus: any = ['Employed (40 hours or more)', 'Employed(Less than 40 hours)', 'Unemployed', 'Student', 'Retired', 'Homemaker', 'Self-Employed']
@@ -40,6 +42,8 @@ export class ApplicationFormComponent implements OnInit {
 
 	})
 
+	get f() {return this.profileForm.controls;}
+
 	changeJobStatus(e)
 	{
 		this.profileForm.value.jobStatus = e.target.value
@@ -61,6 +65,13 @@ export class ApplicationFormComponent implements OnInit {
 
 	onSubmit()
 	{
+		this.submitted = true;
+
+		if (this.profileForm.invalid)
+		{
+			console.log('Can not submit');
+			return;
+		}
 		console.log(this.profileForm.value)
 	}
 
@@ -83,7 +94,7 @@ export class ApplicationFormComponent implements OnInit {
 
 	}
 
-	get f() {return this.profileForm.controls;}
+	
 
   
 
