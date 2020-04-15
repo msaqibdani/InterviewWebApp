@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 declare var places: any; 
 declare var $:any;
 
@@ -18,7 +18,7 @@ export class ApplicationFormComponent implements OnInit {
 		firstName: new FormControl(''),
 		middleInitial: new FormControl(''),
 		lastName: new FormControl(''),
-		emailAddress: new FormControl(''),
+		emailAddress: new FormControl('', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
 		address: new FormControl(''),
 		genderName: new FormControl(''),
 		dateOfBirth: new FormControl(''),
@@ -35,7 +35,8 @@ export class ApplicationFormComponent implements OnInit {
 		jobTitle: new FormControl(''),
 		workAddress: new FormControl(''),
 		ssNumber: new FormControl(''),
-		phoneNumber: new FormControl('')
+		phoneNumber: new FormControl(''),
+		workNumber: new FormControl('')
 
 	})
 
@@ -75,10 +76,14 @@ export class ApplicationFormComponent implements OnInit {
 		});
 
 		$(document).ready(function(){
-			$("#phoneNumber").inputmask({"mask":"(999) 999-9999"});
+			$('#phoneNumber').mask('(000) 000-0000');
+			$('#workNumber').mask('(000) 000-0000');
+			$('#ssNumber').mask('000-00-0000');
 		});
 
 	}
+
+	get f() {return this.profileForm.controls;}
 
   
 
