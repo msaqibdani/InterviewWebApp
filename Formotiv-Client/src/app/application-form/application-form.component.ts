@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 declare var places: any; 
+declare var $:any;
 
 @Component({
   selector: 'app-application-form',
@@ -11,27 +12,43 @@ export class ApplicationFormComponent implements OnInit {
 
 	Gender: any = ['Male', 'Female', 'Genderqueer/Non-binary', 'Other','I prefer not to answer']
 	Income: any = ['Less than $10,000', '$10,000 to $19,999', '$20,000 to $39,999', '$40,000 to $59,999', '$60,000 to $79,999', '$80,000 to $99,999', '$100,000 or more']
-	
+	JobStatus: any = ['Employed (40 hours or more)', 'Employed(Less than 40 hours)', 'Unemployed', 'Student', 'Retired', 'Homemaker', 'Self-Employed']
 
 	profileForm = new FormGroup({
-		firstName: new FormControl('Muhammad'),
-		middleInitial: new FormControl('D'),
-		lastName: new FormControl('Saqib'),
-		emailAddress: new FormControl('abc@xyz.com'),
-		address: new FormControl('408 South Locust Street Greencastle, IN'),
+		firstName: new FormControl(''),
+		middleInitial: new FormControl(''),
+		lastName: new FormControl(''),
+		emailAddress: new FormControl(''),
+		address: new FormControl(''),
 		genderName: new FormControl(''),
 		dateOfBirth: new FormControl(''),
 		primaryCitizenship: new FormControl(''),
 		otherCitizenships: new FormControl(''),
 		incomeSelect: new FormControl(''),
-		soleEarner: new FormControl('')
+		soleEarner: new FormControl(''),
+		otherIncome: new FormControl(''),
+		taxes: new FormControl(''),
+		jobStatus: new FormControl(''),
+		dependants: new FormControl(''),
+		virtualCurrency: new FormControl(''),
+		companyName: new FormControl(''),
+		jobTitle: new FormControl(''),
+		workAddress: new FormControl(''),
+		ssNumber: new FormControl(''),
+		phoneNumber: new FormControl('')
 
-		
 	})
+
+	changeJobStatus(e)
+	{
+		this.profileForm.value.jobStatus = e.target.value
+		console.log(this.profileForm.value)
+	}
 
 	changeIncome(e)
 	{
 		this.profileForm.value.incomeSelect = e.target.value
+		console.log(this.profileForm.value)
 	}
 
 	changeGender(e)
@@ -52,6 +69,15 @@ export class ApplicationFormComponent implements OnInit {
 		var placesAutocomplete = places({
 			container: document.querySelector('#address')
 		});
+
+		var placesAutocomplete = places({
+			container: document.querySelector('#workAddress')
+		});
+
+		$(document).ready(function(){
+			$("#phoneNumber").inputmask({"mask":"(999) 999-9999"});
+		});
+
 	}
 
   

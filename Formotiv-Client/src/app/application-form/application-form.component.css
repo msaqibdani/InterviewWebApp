@@ -10,10 +10,18 @@
 	background-color: #468bb6;
 	color: white;
 	padding-left: 1vw;
+	height: 5vh;
+	padding-top: 0.75vh;
 }
 
 input
 {
 	margin-top: 0.5vh; 
 	margin-bottom: 0.5vh;
+}
+
+#submitButton
+{
+	margin-left: 50vw;
+	margin-top: -30vh;
 }

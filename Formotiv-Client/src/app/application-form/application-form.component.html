@@ -1,7 +1,7 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 	<div class="row pleft " id="firstStepRow">
 		<div class="col" id="step1">
-			<div class="step-headers">STEP 1. PERSONAL INFORMATION</div>
+			<div class="step-headers" style="margin-top: 2vh; margin-bottom: 5vh;">STEP 1. PERSONAL INFORMATION</div>
 			<div class="row form-group" id="nameGroup">
 				<div class="col">
 					<input type="text" class="form-control" id="firstName" placeholder="Enter First Name" formControlName = "firstName">
@@ -16,6 +16,12 @@
 			<div class="row form-group" id="emailGroup">
 				<div class="col">
 					<input type="email" class="form-control" id="emailAddress" placeholder="Enter Personal Email Address" formControlName = "emailAddress">
+				</div>
+			</div>
+			<div class="row form-group" id="workNumberGroup">
+				<div class="col">
+				</div>
+				<div class="col">
 				</div>
 			</div>
 			<div class="row form-group" id="addressGroup">
@@ -49,18 +55,17 @@
 		</div>
 		<div class="col id="step2>
 
-			<div class="step-headers">STEP 2. SALARY INFORMATION</div>
+			<div class="step-headers" style="margin-top: 2vh; margin-bottom: 5vh;">STEP 3. OTHER INFORMATION</div>
 
 
 			<div class="row form-group" id="annualSalaryGroup" style="margin-top:0.5vh;">
-				<div class="col-6">
-					<select class="custom-select" (change)="changeSelect($event)" formControlName="incomeSelect">
+				<div class="col">
+					<select class="custom-select" (change)="changeIncome($event)" formControlName="incomeSelect">
 						<option id="income" value="" disabled>Select your US Income</option>
 						<option *ngFor="let income of Income" [ngValue]="income">{{income}}</option>
 					</select>
 				</div>
-
-				<div class="col-6" style="padding-top: 1vh;">
+				<div class="col" style="padding-top: 1vh;">
 					<div class="form-check-inline">
 						<label class="form-check-label">
 							<input type="checkbox" class="form-check-input" value="" formControlName="soleEarner" id="soleEarner">  Are you a sole earner in your family?
@@ -68,28 +73,72 @@
 					</div>
 				</div>
 			</div>
-
-
+			<div class="row form-group" id="otherIncomeGroup">
+				<div class="col">
+					<input type="number" class="form-control" placeholder="Any other income earned outside US" formControlName="otherIncome" id="otherIncome">
+				</div>
+				<div class="col">
+					<input type="number" class="form-control" placeholder="Fedral taxes paid this year" formControlName="taxes" id="taxes">
+				</div>
+			</div>
+			<div class="row form-group" id="currentJobStatusGroup">
+				<div class="col">
+					<select class="custom-select" (change)="changeJobStatus($event)" formControlName="jobStatus">
+						<option id="jobsStatus" value="" disabled>Are you employed?</option>
+						<option *ngFor="let jobStatus of JobStatus" [ngValue]="jobStatus">{{jobStatus}}</option>
+					</select>
+				</div>
+				<div class="col">
+					<input type="number" class="form-control" placeholder="Number of dependants" formControlName="dependants" id="dependants" style="margin-top: -0.05vh;">
+				</div>
+			</div>
+			<div class="row form-group" id="lastRow">
+				<div class="col" style="padding-top: 1vh;">
+					<div class="form-check-inline">
+						<label class="form-check-label">
+							<input type="checkbox" class="form-check-input" value="" formControlName="virtualCurrency" id="virtualCurrency">  At any time during 2019, did you receive, sell, send, exchange, or otherwise acquire any financial interest in any virtual currency? 
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="row form-group" id="SSNGroup">
+				<div class="col-6">
+					<input type="number" class="form-control" id="ssNumber" placeholder="Enter Your SSN" formControlName="ssNumber">
+				</div>
+			</div>
 		</div>
-	
-
-
-
-
-
-
 	</div>
 	<div class="row pleft" id="secondStepRow">
-		<div class="col" id="step3">
-			<div class="step-headers">STEP 3. WORK INFORMATION</div>
-		</div>
-		<div class="col" id="step4">
-			<div class="step-headers">STEP 4. OTHER INFORMATION</div>
+		<div class="col" id="step3" style="max-width: 50vw;">
+			<div class="step-headers" style="margin-top: 2vh; margin-bottom: 5vh;">STEP 2. WORK INFORMATION</div>
+			<div class="row form-group" id="nameGroup">
+				<div class="col">
+					<input type="text" class="form-control" id="companyName" placeholder="Enter Your Company Name" formControlName = "companyName">
+				</div>
+				<div class="col">
+					<input type="text" class="form-control" id="jobTitle" placeholder="Enter Your Job Title" formControlName = "jobTitle">
+				</div>
+			</div>
+			<div class="row form-group" id="workAddressGroup">
+				<div class="col">
+					<input type="search" class="form-control" id="workAddress" placeholder="Enter Work Address" formControlName="workAddress">
+				</div>
+			</div>
+
+			<div class="row form-group" id="workNumberGroup">
+				<div class="col">
+					<input type="text" class="form-control" id="phoneNumber" placeholder="Enter Your Mobile Number" formControlName="phoneNumber">
+				</div>
+				<div class="col">
+				</div>
+			</div>
+
+
 		</div>
 	</div>
 <div class="row pleft">
 	<div class="col">
-		<button class="btn btn-outline-dark" type="submit" [disabled]="!profileForm.valid">Submit</button>
+		<button id="submitButton" class="col-2 btn btn-block btn-info" type="submit" [disabled]="!profileForm.valid">Submit</button>
 	</div>
 </div>
 </form>
