@@ -1,10 +1,11 @@
+/* adds left padding and bottom margin after every row */
 .pleft
 {
 	padding-left: 1vw;
 	margin-bottom: 2vh;
 	padding-right: 0.5vw;
 }
-
+/* adds background to Steps row */
 .step-headers
 {
 	background-color: #468bb6;
@@ -12,14 +13,18 @@
 	padding-left: 1vw;
 	height: 5vh;
 	padding-top: 0.75vh;
+	font-size: 18px;
 }
-
 input
 {
+	font-size: 12px;
 	margin-top: 0.5vh; 
 	margin-bottom: 0.5vh;
 }
-
+select
+{
+	font-size: 12px;
+}
 #submitButton
 {
 	margin-left: 80vw;

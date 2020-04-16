@@ -1,12 +1,27 @@
+/* adds left padding and bottom margin after every row */
 .pleft
 {
 	padding-left: 1vw;
 	margin-bottom: 1vh;
 }
-
+/* styling for first row */
 .firstRow
 {
 	background-color: #468bb6;
 	height: 10vh;
 	color: white;
+}
+h4 
+{
+	padding-top: 3vh;
+	font-size: 24px;
+}
+h5
+{
+	color: #468bb6;
+	font-size: 18px;
+}
+p
+{
+	margin-top: -2vh;
 }

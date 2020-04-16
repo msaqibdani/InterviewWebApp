@@ -49,20 +49,17 @@ export class ApplicationFormComponent implements OnInit {
 		this.profileForm.value.jobStatus = e.target.value
 		console.log(this.profileForm.value)
 	}
-
 	changeIncome(e)
 	{
 		this.profileForm.value.incomeSelect = e.target.value
 		console.log(this.profileForm.value)
 	}
-
 	changeGender(e)
 	{
 		this.profileForm.value.genderName = e.target.value
 		console.log(this.profileForm.value)
 		
 	}
-
 	onSubmit()
 	{
 		this.submitted = true;
@@ -74,15 +71,13 @@ export class ApplicationFormComponent implements OnInit {
 		}
 		console.log(this.profileForm.value)
 	}
-
-
 	constructor() { }
 	ngOnInit(): void {
 		var placesAutocomplete = places({
 			container: document.querySelector('#address')
 		});
 
-		var placesAutocomplete = places({
+		var placesAutocomplete_work = places({
 			container: document.querySelector('#workAddress')
 		});
 
@@ -93,9 +88,4 @@ export class ApplicationFormComponent implements OnInit {
 		});
 
 	}
-
-	
-
-  
-
 }
