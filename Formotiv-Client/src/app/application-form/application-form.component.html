@@ -4,7 +4,7 @@
    to fill out the form. Step 1: Personal Information, Step 2: Work Information, Step 3: Other Information
 3. Each Step is followed by multiple inputs. 
 4. The layout of the entire form is based upon Bootstrap's Grid system. 
-5. Angular's directives are used manage the functionality of each field.
+5. Angular's directives are used to manage the functionality of each field.
 -->
 <!-- start of the form -->
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
@@ -33,12 +33,12 @@
 			<div class="row form-group" id="emailGroup">
 				<!-- Email Address field -->
 				<div class="col">
-					<input type="text" class="form-control" id="emailAddress" placeholder="Enter Personal Email Address" formControlName = "emailAddress" [ngClass]="{'is-invalid': submitted && f.emailAddress.errors}">
+					<input type="text" class="form-control" id="emailAddress" placeholder="Enter Personal Email Address" formControlName = "emailAddress" [ngClass]="{'is-invalid': f.emailAddress.errors}">
 					<!-- Warning displayed if email address is not valid/not entered -->  
-					<div *ngIf="submitted && f.emailAddress.errors" class="invalid-feedback">
+					<div *ngIf="f.emailAddress.errors" class="invalid-feedback">
 						<!-- Warning: email address isn't entered -->
 						<div *ngIf="f.emailAddress.errors.required">Email is required</div>
-						<!-- Warning: email address entereted but isn't in the correct format -->
+						<!-- Warning: email address entereted but isn't in the correct format-->
 						<div *ngIf="f.emailAddress.errors.email">Email is invalid</div>
 					</div>
 				</div>
@@ -99,6 +99,7 @@
 				</div>
 				<!-- Sole Earner: Column -->
 				<div class="col" style="padding-top: 1vh;">
+					<!-- Check box -->
 					<div class="form-check-inline">
 						<label class="form-check-label">
 							<input type="checkbox" class="form-check-input" value="" formControlName="soleEarner" id="soleEarner">  Are you a sole earner in your family?
@@ -106,26 +107,34 @@
 					</div>
 				</div>
 			</div>
+			<!-- Other Income, Federal Taxes: Row -->
 			<div class="row form-group" id="otherIncomeGroup">
+				<!-- Other Income: Column -->
 				<div class="col">
 					<input type="number" class="form-control" placeholder="Any other income earned outside US" formControlName="otherIncome" id="otherIncome">
 				</div>
+				<!-- Other Income: Column -->
 				<div class="col">
 					<input type="number" class="form-control" placeholder="Fedral taxes paid this year" formControlName="taxes" id="taxes">
 				</div>
 			</div>
+			<!-- Work Status and Total Number of Dependants: Row -->
 			<div class="row form-group" id="currentJobStatusGroup">
+				<!-- Work Status: Column -->
 				<div class="col">
+					<!-- check JobStatus array and changeJobStatus function in application-form.component.ts -->
 					<select class="custom-select" (change)="changeJobStatus($event)" formControlName="jobStatus">
 						<option id="jobsStatus" value="" disabled>Are you employed?</option>
 						<option *ngFor="let jobStatus of JobStatus" [ngValue]="jobStatus">{{jobStatus}}</option>
 					</select>
 				</div>
+				<!-- Dependants: Column -->
 				<div class="col">
 					<input type="number" class="form-control" placeholder="Number of dependants" formControlName="dependants" id="dependants" style="margin-top: -0.05vh;">
 				</div>
 			</div>
-			<div class="row form-group" id="lastRow">
+			<!-- Virtual Currency: Row -->
+			<div class="row form-group" id="virtualCurrencyGroup">
 				<div class="col" style="padding-top: 1vh;">
 					<div class="form-check-inline">
 						<label class="form-check-label">
@@ -134,7 +143,9 @@
 					</div>
 				</div>
 			</div>
+			<!-- SSN: Row -->
 			<div class="row form-group" id="SSNGroup">
+				<!-- SSN: Column -->
 				<div class="col-6">
 					<input type="text" class="form-control" id="ssNumber" placeholder="Enter Your SSN" formControlName="ssNumber">
 				</div>
@@ -143,25 +154,35 @@
 	</div>
 	<!-- Step 2 Row -->
 	<div class="row pleft" id="secondStepRow">
+		<!-- Step 2 Column -->
 		<div class="col" id="step3" style="max-width: 50vw;">
+			<!-- Step 2 Header: Work Information -->
 			<div class="step-headers" style="margin-top: 2vh; margin-bottom: 5vh;">STEP 2. WORK INFORMATION</div>
-			<div class="row form-group" id="nameGroup">
+			<!-- Compnay Name Group: Row -->
+			<div class="row form-group" id="companyNameGroup">
+				<!-- Company Name: Column -->
 				<div class="col">
 					<input type="text" class="form-control" id="companyName" placeholder="Enter Your Company Name" formControlName = "companyName">
 				</div>
+				<!-- Job Title: Column -->
 				<div class="col">
 					<input type="text" class="form-control" id="jobTitle" placeholder="Enter Your Job Title" formControlName = "jobTitle">
 				</div>
 			</div>
+			<!-- Work Address API: Row -->
 			<div class="row form-group" id="workAddressGroup">
 				<div class="col">
+					<!-- (Imported a CDN in index.html, check 'placesAutocomplete_work' variable in application-form.component.ts) -->
 					<input type="search" class="form-control" id="workAddress" placeholder="Enter Work Address" formControlName="workAddress">
 				</div>
 			</div>
+			<!-- Work Number Group: Row -->
 			<div class="row form-group" id="workNumberGroup">
 				<div class="col">
+					<!--  Mobile Number: Column -->
 					<input type="text" class="form-control" id="phoneNumber" placeholder="Enter Your Mobile Number" formControlName="phoneNumber">
 				</div>
+				<!--  Work Number: Column -->
 				<div class="col">
 					<input type="text" class="form-control" id="workNumber" placeholder="Enter Your Work Number" formControlName="workNumber">
 				</div>
