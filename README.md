@@ -9,5 +9,6 @@ Creating Environment
 4. npm install -g @angular/cli
 5. Move to "Formativ-Client" folder inside the directory
 6. run 'npm install'
-7. run ng server --open from terminal/command prompt
+7. run 'npm install --save @angular/material'
+8. run ng server --open from terminal/command prompt
 
