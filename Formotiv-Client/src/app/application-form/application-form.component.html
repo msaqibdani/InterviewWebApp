@@ -18,7 +18,10 @@
 			<div class="row form-group" id="nameGroup">
 				<!-- First Name -->
 				<div class="col">
-					<input type="text" class="form-control" id="firstName" placeholder="Enter First Name" formControlName = "firstName">
+					<input type="text" class="form-control" id="firstName" placeholder="Enter First Name" formControlName = "firstName" [ngClass] = "{'is-invalid':f.firstName.errors}">
+					<div *ngIf="f.firstName.errors" class="invalid-feedback">
+						<div *ngIf="f.firstName.errors.required">First Name is required</div>
+					</div>
 				</div>
 				<!-- Middle Initial -->
 				<div class="col">
@@ -26,7 +29,10 @@
 				</div>
 				<!-- Last Name -->
 				<div class="col">
-					<input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" formControlName = "lastName">
+					<input type="text" class="form-control" id="lastName" placeholder="Enter Last Name" formControlName = "lastName" [ngClass] = "{'is-invalid':f.firstName.errors}">
+					<div *ngIf="f.firstName.errors" class="invalid-feedback">
+						<div *ngIf="f.firstName.errors.required">Last Name is required</div>
+					</div>
 				</div>
 			</div>
 			<!-- Email Address: Row -->
@@ -66,7 +72,11 @@
 				</div>
 				<!-- Date of Birth input: Column -->
 				<div class="col">
-					<input class="form-control" type="date" id="DOB" formControlName="dateOfBirth">
+					<input class="form-control" type="date" id="DOB" formControlName="dateOfBirth"
+					[ngClass] = "{'is-invalid':f.dateOfBirth.errors}">
+					<div *ngIf="f.dateOfBirth.errors" class="invalid-feedback">
+						<div *ngIf="f.dateOfBirth.errors.required">DOB is required</div>
+					</div>
 				</div>
 			</div>
 			<!-- Citizenships: Row -->
@@ -92,7 +102,10 @@
 				<!-- Annual Salary: Column -->
 				<div class="col">
 					<!-- check Income array and changeIncome function in application-form.component.ts -->
-					<select class="custom-select" (change)="changeIncome($event)" formControlName="incomeSelect">
+					<select class="custom-select" (change)="changeIncome($event)" formControlName="incomeSelect" [ngClass] = "{'is-invalid':f.incomeSelect.errors}">
+						<div *ngIf="f.incomeSelect.errors" class="invalid-feedback">
+							<div *ngIf="f.incomeSelect.errors.required">Selection is required</div>
+						</div>
 						<option id="income" value="" disabled>Select your US Income</option>
 						<option *ngFor="let income of Income" [ngValue]="income">{{income}}</option>
 					</select>
@@ -123,7 +136,10 @@
 				<!-- Work Status: Column -->
 				<div class="col">
 					<!-- check JobStatus array and changeJobStatus function in application-form.component.ts -->
-					<select class="custom-select" (change)="changeJobStatus($event)" formControlName="jobStatus">
+					<select class="custom-select" (change)="changeJobStatus($event)" formControlName="jobStatus" [ngClass] = "{'is-invalid':f.jobStatus.errors}">
+						<div *ngIf="f.jobStatus.errors" class="invalid-feedback">
+							<div *ngIf="f.jobStatus.errors.required">Selection is required</div>
+						</div>
 						<option id="jobsStatus" value="" disabled>Are you employed?</option>
 						<option *ngFor="let jobStatus of JobStatus" [ngValue]="jobStatus">{{jobStatus}}</option>
 					</select>
@@ -180,7 +196,10 @@
 			<div class="row form-group" id="workNumberGroup">
 				<div class="col">
 					<!--  Mobile Number: Column -->
-					<input type="text" class="form-control" id="phoneNumber" placeholder="Enter Your Mobile Number" formControlName="phoneNumber">
+					<input type="text" class="form-control" id="phoneNumber" placeholder="Enter Your Mobile Number" formControlName="phoneNumber" [ngClass] = "{'is-invalid':f.phoneNumber.errors}">
+					<div *ngIf="f.phoneNumber.errors" class="invalid-feedback">
+						<div *ngIf="f.phoneNumber.errors.required">Number is required</div>
+					</div>
 				</div>
 				<!--  Work Number: Column -->
 				<div class="col">

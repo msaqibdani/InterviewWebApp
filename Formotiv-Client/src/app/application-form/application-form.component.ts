@@ -17,30 +17,30 @@ export class ApplicationFormComponent implements OnInit {
 	JobStatus: any = ['Employed (40 hours or more)', 'Employed(Less than 40 hours)', 'Unemployed', 'Student', 'Retired', 'Homemaker', 'Self-Employed']
 
 	profileForm = new FormGroup({
-		firstName: new FormControl(''),
+		firstName: new FormControl('', [Validators.required]),
 		middleInitial: new FormControl(''),
-		lastName: new FormControl(''),
+		lastName: new FormControl('', [Validators.required]),
 		emailAddress: new FormControl('', [Validators.required, Validators.email,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]),
 		address: new FormControl(''),
 		genderName: new FormControl(''),
-		dateOfBirth: new FormControl(''),
+		dateOfBirth: new FormControl('', [Validators.required]),
 		primaryCitizenship: new FormControl(''),
 		otherCitizenships: new FormControl(''),
-		incomeSelect: new FormControl(''),
+		incomeSelect: new FormControl('', [Validators.required]),
 		soleEarner: new FormControl(''),
 		otherIncome: new FormControl(''),
 		taxes: new FormControl(''),
-		jobStatus: new FormControl(''),
+		jobStatus: new FormControl('', [Validators.required]),
 		dependants: new FormControl(''),
 		virtualCurrency: new FormControl(''),
 		companyName: new FormControl(''),
 		jobTitle: new FormControl(''),
 		workAddress: new FormControl(''),
 		ssNumber: new FormControl(''),
-		phoneNumber: new FormControl(''),
+		phoneNumber: new FormControl('', [Validators.required]),
 		workNumber: new FormControl('')
 
-	})
+	});
 
 	get f() {return this.profileForm.controls;}
 
