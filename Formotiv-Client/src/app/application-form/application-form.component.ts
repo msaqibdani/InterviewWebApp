@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 declare var places: any; 
 declare var $:any;
+declare var formatic: any;
 
 @Component({
   selector: 'app-application-form',
@@ -69,7 +70,9 @@ export class ApplicationFormComponent implements OnInit {
 			console.log('Can not submit');
 			return;
 		}
-		console.log(this.profileForm.value)
+		formatic.client.triggerSubmit(document.getElementById('profileForm'));
+		console.log('Submitted');
+		
 	}
 	constructor() { }
 	ngOnInit(): void {
